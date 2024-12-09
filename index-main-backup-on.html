@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("BYSJTvo0nxGkEYYeq"); // Replace with your EmailJS user ID
+        })();
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">HABIBS, Bongaon</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#book" class="btn">Book Appointment</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Md. Habibs Salon</h1>
+            <p>Your Beauty, Our Passion</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <h3>Haircuts</h3>
+                <p>Get the perfect cut tailored to your style.</p>
+            </div>
+            <div class="service">
+                <h3>Hair Coloring</h3>
+                <p>Professional coloring for a vibrant look.</p>
+            </div>
+            <div class="service">
+                <h3>Spa Treatments</h3>
+                <p>Relax and rejuvenate with our spa services.</p>
+            </div>
+            <div class="service">
+                <h3>Manicure & Pedicure</h3>
+                <p>Pamper yourself with our nail care services.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <!--
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <img src="images/gallery-1.jpg" alt="Salon Work 1">
+            <img src="images/gallery-2.jpg" alt="Salon Work 2">
+            <img src="images/gallery-3.jpg" alt="Salon Work 3">
+        </div>
+    </section>
+    -->
+    <!--
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <img src="images/gallery-4.jpg" alt="Salon Work 4">
+            <img src="images/gallery-1.jpg" alt="Salon Work 1">
+            <img src="images/gallery-2.jpg" alt="Salon Work 2">
+            <img src="images/gallery-3.jpg" alt="Salon Work 3">
+            <img src="images/gallery-5.jpg" alt="Salon Work 5">
+        </div>
+    </section>
+    -->
+
+    <!-- Scroll buttons -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-wrapper">
+            <button class="scroll-btn left-btn" id="scroll-left">&lt;</button>
+            <div class="gallery-container" id="gallery-container">
+                <img src="images/gallery-1.jpg" alt="Salon Work 1">
+                <img src="images/gallery-2.jpg" alt="Salon Work 2">
+                <img src="images/gallery-3.jpg" alt="Salon Work 3">
+                <img src="images/gallery-4.jpg" alt="Salon Work 4">
+                <img src="images/gallery-5.jpg" alt="Salon Work 5">
+                <img src="images/gallery-6.jpg" alt="Salon Work 6">
+            </div>
+            <button class="scroll-btn right-btn" id="scroll-right">&gt;</button>
+        </div>
+    </section>
+    
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"Absolutely loved the service! My hair looks amazing!"</p>
+            <h4>- Jane Doe</h4>
+        </div>
+        <div class="testimonial">
+            <p>"The staff is so friendly, and the spa treatment was heavenly."</p>
+            <h4>- John Smith</h4>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@mdhabibs.com</p>
+        <p>Phone: +123-456-7890</p>
+        <p>Address: 123 Beauty Lane, Glamour City</p>
+        <!--
+        <form action="#" method="POST" class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Md.Habibs. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Book Appointment Modal -->
+        <div id="appointmentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Book an Appointment</h2>
+                <form id="appointmentForm">
+                    <input type="text" id="name" name="user_name" placeholder="Please enter your Name" required>
+                    <input type="tel" id="contact" name="user_contact" placeholder="Please enter your contact number" required>
+                    <input type="email" id="email" name="user_email" placeholder="Please enter your email address" required>
+                    <input type="text" id="service" name="service" placeholder="Please enter the service(s) you want" required>
+                    <label for="date" style="font-size: 10pt;">Please select your preferred date of appointment</label>
+                    <input type="date" id="date" name="date" placeholder="Please select your date of visit" required>
+                    
+                    <!-- Time Slot Selection -->
+                    
+                    <!--
+                    <label for="time-slot">Select Time Slot</label>
+                    <select id="time-slot" name="time_slot" required>
+                        Dynamically populated time slots
+                    </select>
+                    -->
+
+                    <!-- Time Slot Selection -->
+                    <label for="time-slot" style="font-size: 10pt;">Please select your preferred time slot</label>
+                    <div id="time-slot-container">
+                        <button type="button" id="decrement-time" class="counter-btn">-</button>
+                        <input type="text" id="time-slot" name="time_slot" value="10:00" readonly required>
+                        <button type="button" id="increment-time" class="counter-btn">+</button>
+                    </div>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            /* Function to populate time slots
+                const populateTimeSlots = () => {
+                    const timeSlotSelect = document.getElementById("time-slot");
+                    const startTime = 10; // Starting hour in 24-hour format
+                    const endTime = 22;  // Ending hour in 24-hour format
+
+                    for (let hour = startTime; hour < endTime; hour++) {
+                        const option1 = document.createElement("option");
+                        option1.value = `${hour}:00`;
+                        option1.textContent = `${hour}:00`;
+                        timeSlotSelect.appendChild(option1);
+
+                        const option2 = document.createElement("option");
+                        option2.value = `${hour}:30`;
+                        option2.textContent = `${hour}:30`;
+                        timeSlotSelect.appendChild(option2);
+                    }
+                };
+
+                // Initialize time slots on page load
+                document.addEventListener("DOMContentLoaded", populateTimeSlots);
+
+            */
+
+            const populateTimeSlots = () => {
+                // Initialize counter state
+                const startTime = 10; // Starting hour
+                const endTime = 22; // Ending hour
+                const intervalMinutes = 30; // Time interval in minutes
+
+                const timeSlotInput = document.getElementById("time-slot");
+                let currentHour = startTime;
+                let currentMinute = 0;
+
+                const formatTime = (hour, minute) => {
+                    const formattedHour = hour.toString().padStart(2, "0");
+                    const formattedMinute = minute.toString().padStart(2, "0");
+                    return `${formattedHour}:${formattedMinute}`;
+                };
+
+                const updateTimeSlot = () => {
+                    timeSlotInput.value = formatTime(currentHour, currentMinute);
+                };
+
+                document.getElementById("increment-time").addEventListener("click", () => {
+                    currentMinute += intervalMinutes;
+                    if (currentMinute >= 60) {
+                        currentMinute = 0;
+                        currentHour++;
+                    }
+                    if (currentHour >= endTime) {
+                        currentHour = startTime;
+                        currentMinute = 0;
+                    }
+                    updateTimeSlot();
+                });
+
+                document.getElementById("decrement-time").addEventListener("click", () => {
+                    currentMinute -= intervalMinutes;
+                    if (currentMinute < 0) {
+                        currentMinute = 30;
+                        currentHour--;
+                    }
+                    if (currentHour < startTime) {
+                        currentHour = endTime - 1;
+                        currentMinute = 30;
+                    }
+                    updateTimeSlot();
+                });
+
+                // Initialize the input field with the default time
+                updateTimeSlot();
+            };
+
+        // Call the function to initialize the time slot counter
+        populateTimeSlots();
+
+
+            // Function to open the modal
+            const openModal = () => {
+                document.getElementById('appointmentModal').style.display = 'flex';
+            };
+
+            // Function to close the modal
+            const closeModal = () => {
+                document.getElementById('appointmentModal').style.display = 'none';
+            };
+
+            // Add event listeners for modal open and close
+            document.querySelector('.btn').addEventListener('click', (e) => {
+                if (e.target.innerText === "Book Appointment") {
+                    e.preventDefault();
+                    openModal();
+                }
+            });
+
+            document.querySelector('.close-btn').addEventListener('click', closeModal);
+
+            (function() {
+                emailjs.init("BYSJTvo0nxGkEYYeq"); // Replace with your EmailJS User ID
+            })();
+
+            // Add event listener for form submission
+            document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                // Define EmailJS Service and Template IDs
+                const serviceID = "service_63m8edj";   // Replace with your EmailJS Service ID
+                const templateID = "template_r91bvkw"; // Replace with your EmailJS Template ID
+
+                // Send the form data via EmailJS
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then((response) => {
+                        alert(`Appointment booked successfully on ${document.getElementById("date").value} at ${document.getElementById("time-slot").value}. Thank you!`);
+                        console.log("SUCCESS!", response.status, response.text);
+                        this.reset(); // Reset the form after submission
+                    })
+                    .catch((error) => {
+                        alert("Failed to send message. Please try again.");
+                        console.error("FAILED...", error);
+                    });
+            });
+
+            // * style for gallery images
+            // JavaScript to enable button navigation
+            const galleryContainer = document.getElementById('gallery-container');
+            const scrollLeftButton = document.getElementById('scroll-left');
+            const scrollRightButton = document.getElementById('scroll-right');
+
+            // Scroll left by 300px
+            scrollLeftButton.addEventListener('click', () => {
+                galleryContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+
+            // Scroll right by 300px
+            scrollRightButton.addEventListener('click', () => {
+                galleryContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+
+            // * style for services section
+            // JavaScript to enable button navigation for services section
+            // JavaScript to enable button navigation for services section
+            const serviceContainer = document.getElementById('service-container');
+            const serviceScrollLeft = document.getElementById('services-scroll-left');
+            const serviceScrollRight = document.getElementById('services-scroll-right');
+
+            // Scroll left by the width of one service box
+            serviceScrollLeft.addEventListener('click', () => {
+                serviceContainer.scrollBy({ left: -250, behavior: 'smooth' });
+            });
+
+            // Scroll right by the width of one service box
+            serviceScrollRight.addEventListener('click', () => {
+                serviceContainer.scrollBy({ left: 250, behavior: 'smooth' });
+            });
+
+
+        </script>
+
+    
+</body>
+</html>
